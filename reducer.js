@@ -15,15 +15,15 @@ function todos_reducer( state = initialState, action){
 	switch(action.type){
 		case 'ADD_TODO':
 			return {
-				id: action.id
-				text: action.text
+				id: action.id,
+				text: action.text,
 				completed: false
 
 			}
 		case 'TOGGLE_TODO':
 			return Object.assign({}, state, {completed: !state.completed})
 
-		case default:
+		default:
 			return state
 	}
 }

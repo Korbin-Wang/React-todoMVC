@@ -3,13 +3,16 @@ import Todo from './Todo.js'
 
 const TodoList = ({todos, onClick}) => {
 	<ul>
-		{todos.map()
-
-		}
+		{todos.map(todo => 
+			<Todo 
+				key = {todo.id}
+				onclick = { () => onTodoClick(todo.id)}
+			/>
+			
+			)}
 	</ul>
 
-
-}
+)
 
 TodoList.propTypes = {
 	todos: PropTypes.arrayOf(PropTypes.shape({
@@ -18,7 +21,7 @@ TodoList.propTypes = {
 		text: PropTypes.string.isRequired,
 
 	}).isRequired).isRequired,
-	onClick: PropTypes.func.isRequired
+	onTodoClick: PropTypes.func.isRequired
 }
 
 export default TodoList
